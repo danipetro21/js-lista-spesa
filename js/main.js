@@ -4,23 +4,29 @@
 
 let listaSpesa = ["pomodori", "lattuga", "pane", "latte", "acqua", "carne", "cioccolata", "detersivo"];
 let list = document.querySelector("ol");
+let i = 0;
+// // FOR
+// for (let i = 0; i < listaSpesa.length; i++) {
+//     list.innerHTML += `<li>${listaSpesa[i]}</li>`
+// }
 
-// FOR
-for (let i = 0; i < listaSpesa.length; i++) {
+// WHILE
+while (i < listaSpesa.length) {
     list.innerHTML += `<li>${listaSpesa[i]}</li>`
+    i++
 }
 
 
-let i = listaSpesa.length;
+let j = listaSpesa.length;
+let input;
 function aggiungi() {
-    let input = document.getElementById("add").value;
+    input = document.getElementById("add").value;
     listaSpesa.push(input);
-    while (i < listaSpesa.length) {
-        list.innerHTML += `<li>${listaSpesa[i]}</li>`
-        i++
-    }
+    list.innerHTML += `<li>${listaSpesa[j]}</li>`
+    j++
+    input.value = " ";
 
-    if(i == 20){
+    if (j == 20) {
         alert("SI! MA STAI CALMO!! TROPPI PRODOTTI")
     }
 }
